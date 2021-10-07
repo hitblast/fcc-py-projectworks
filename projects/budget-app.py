@@ -1,25 +1,25 @@
 class Category:
-  def __init__(self, name):
+  def __init__(self, name: str):
     self.name = name
-    self.ledger = []
+    self.ledger = list()
 
-  def withdraw(self, amount, description = ""):
+  def withdraw(self, amount: int, description: str=""):
     if self.check_funds(amount):
       self.ledger.append({"amount": -amount, "description": description})
       return True
     else:
       return False
 
-  def deposit(self, amount, description = ""):
+  def deposit(self, amount: int, description: str=""):
     self.ledger.append({"amount": amount, "description": description})
 
   def get_balance(self):
-    total = 0
+    total = int()
     for item in self.ledger:
       total += item['amount']
     return total
 
-  def transfer(self, amount, budget_category):
+  def transfer(self, amount: int, budget_category):
     if self.check_funds(amount):
       self.withdraw(amount, f"Transfer to {budget_category.name}")
       budget_category.deposit(amount, f"Transfer from {self.name}")
@@ -27,7 +27,7 @@ class Category:
     else:
       return False
 
-  def check_funds(self, amount):
+  def check_funds(self, amount: int):
     if amount <= self.get_balance():
       return True
     else:
@@ -41,9 +41,9 @@ class Category:
     return output
 
 def create_spend_chart(categories):
-  category_names = []
-  spent = []
-  spent_percentages = []
+  category_names = list()
+  spent = list()
+  spent_percentages = list()
 
   for category in categories:
     total = 0

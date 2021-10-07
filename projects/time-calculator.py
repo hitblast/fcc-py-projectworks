@@ -1,4 +1,4 @@
-def add_time(start, duration, day=None):
+def add_time(start, duration: int, day=None):
   time, period = start.split()
   initial_period = period
 

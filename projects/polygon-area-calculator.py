@@ -1,15 +1,15 @@
 class Rectangle:
-  def __init__(self, width, height):
+  def __init__(self, width: int, height: int):
     self.width = width
     self.height = height
 
   def __repr__(self):
     return f"Rectangle(width={self.width}, height={self.height})"
 
-  def set_width(self, num):
+  def set_width(self, num: int):
     self.width = num
 
-  def set_height(self, num):
+  def set_height(self, num: int):
     self.height = num
 
   def get_area(self):
@@ -44,12 +44,12 @@ class Square(Rectangle):
   def __repr__(self):
     return f"Square(side={self.width})"
 
-  def set_side(self, num):
+  def set_side(self, num: int):
     self.width = num
     self.height = num
 
-  def set_width(self, num):
+  def set_width(self, num: int):
     self.set_side(num)
 
-  def set_height(self, num):
+  def set_height(self, num: int):
     self.set_side(num)

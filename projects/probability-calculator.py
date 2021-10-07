@@ -3,13 +3,13 @@ import random
 
 class Hat:
   def __init__(self, **kwargs):
-    self.contents = []
+    self.contents = list()
     for key, value in kwargs.items():
       for i in range(value):
         self.contents.append(key)
 
   def draw(self, number):
-    balls_drawn = []
+    balls_drawn = list()
 
     if number >= len(self.contents):
       return self.contents
