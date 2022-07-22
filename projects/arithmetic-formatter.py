@@ -1,8 +1,8 @@
 def arithmetic_arranger(problems, statprint: bool=False):
-    first = str()
-    second = str()
-    sumx = str()
-    lines = str()
+    first = ""
+    second = ""
+    sumx = ""
+    lines = ""
 
     if len(problems) >= 6:
         return 'Error: Too many problems.'
