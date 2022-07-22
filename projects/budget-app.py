@@ -41,6 +41,7 @@ class Category:
             output += f"Total: {format(self.get_balance(), '.2f')}"
             return output
 
+
 def create_spend_chart(categories):
     category_names = []
     spent = []
